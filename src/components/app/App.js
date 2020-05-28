@@ -110,6 +110,8 @@ export default function App() {
                 </div>
         )
 
+        const array = jokeArray.map((joke, index) => <Joke key={index} joke={joke} />)
+
 
 
         return (
@@ -117,19 +119,14 @@ export default function App() {
                 <div className="app">
                         <h1>Hey!</h1>
                         <h2>Let’s try to find a joke for you:</h2>
-                        <div>
-                                <button onClick={() => getJoke(jokeType)} >Get a joke</button>
-                        </div>
                         <button onClick={() => onChangeJokeType('randomJoke')}>Random Joke</button>
                         <button onClick={() => onChangeJokeType('categoryJoke')}>Category joke</button>
                         <button onClick={() => onChangeJokeType('searchJoke')}>Search joke</button>
+                        {jokeType === 'randomJoke' ? (<div><button onClick={() => getJoke(jokeType)} >Get a joke</button></div>) : null}
                         {jokeType === 'categoryJoke' ? blockCategory : null}
                         {jokeType === 'searchJoke' ? blockSearch : null}
-                        {jokeArray.map(joke => <Joke key={Math.random() * 1000} joke={joke} />)}
+                        {jokeType === 'searchJoke' ? array : null}
                         <Joke joke={joke} />
-
-
-
                 </div>
 
         );
