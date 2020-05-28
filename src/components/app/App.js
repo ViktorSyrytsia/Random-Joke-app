@@ -17,7 +17,6 @@ export default function App() {
         const [searchValue, setSearchValue] = useState('');
         const [jokeArray, setJokeArray] = useState([]);
 
-
         const [jokeType, setJokeType] = useState('searchJoke');
 
         const getJoke = (jokeType) => {
@@ -29,7 +28,6 @@ export default function App() {
                 } else if (jokeType === 'searchJoke') {
                         jokeSearching(searchValue)
                 }
-
         }
 
         const onChangeJokeType = (type) => {
@@ -40,7 +38,6 @@ export default function App() {
                 setJokeType(type);
 
         }
-
 
 
         const getAllCategorys = () => {
@@ -67,7 +64,6 @@ export default function App() {
                         })
         }
 
-
         const onGotJoke = () => {
                 someJoke.getRandomJoke()
                         .then((joke) => {
@@ -78,7 +74,6 @@ export default function App() {
 
                         })
         }
-
 
         const onGotCategoryJoke = (category) => {
                 someJoke.getCatagoryRandomJoke(category)
@@ -97,20 +92,20 @@ export default function App() {
                 console.log(searchValue);
         }
 
+
         const blockCategory = (<div>
                 {categorys && categorys.map((category, index) =>
-                        (<button key={index} onClick={() => onGotCategoryJoke(category)} >{category}</button>))}
+                        (<button className="small-btn" key={index} onClick={() => onGotCategoryJoke(category)} >{category}</button>))}
         </div>);
-
 
         const blockSearch = (
                 <div>
                         <input onChange={inputFunc} type="text" placeholder="Joke searching..."></input>
-                        <button onClick={() => jokeSearching(searchValue)} >Search</button>
+                        <button className="small-btn" onClick={() => jokeSearching(searchValue)} >Search</button>
                 </div>
         )
 
-        const array = jokeArray.map((joke, index) => <Joke key={index} joke={joke} />)
+        const searchArray = jokeArray.map((joke, index) => <Joke key={index} joke={joke} />)
 
 
 
@@ -119,13 +114,16 @@ export default function App() {
                 <div className="app">
                         <h1>Hey!</h1>
                         <h2>Let’s try to find a joke for you:</h2>
-                        <button onClick={() => onChangeJokeType('randomJoke')}>Random Joke</button>
-                        <button onClick={() => onChangeJokeType('categoryJoke')}>Category joke</button>
-                        <button onClick={() => onChangeJokeType('searchJoke')}>Search joke</button>
-                        {jokeType === 'randomJoke' ? (<div><button onClick={() => getJoke(jokeType)} >Get a joke</button></div>) : null}
+                        <div className="buttons-group">
+                                <button className="button active" onClick={() => onChangeJokeType('randomJoke')}>Random Joke</button>
+                                <button className="button " onClick={() => onChangeJokeType('categoryJoke')}>Category joke</button>
+                                <button className="button " onClick={() => onChangeJokeType('searchJoke')}>Search joke</button>
+                        </div>
+
+                        {jokeType === 'randomJoke' ? (<div><button className="small-btn" onClick={() => getJoke(jokeType)} >Get a joke</button></div>) : null}
                         {jokeType === 'categoryJoke' ? blockCategory : null}
                         {jokeType === 'searchJoke' ? blockSearch : null}
-                        {jokeType === 'searchJoke' ? array : null}
+                        {jokeType === 'searchJoke' ? searchArray : null}
                         <Joke joke={joke} />
                 </div>
 

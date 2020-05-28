@@ -1,4 +1,63 @@
 .app {
+  text-align: center;
+  font-family: "Lemonada", cursive;
   width: 800px;
   margin: 100px auto;
+  border-radius: 37px;
+  background: #00a870;
+  padding: 50px;
+}
+
+.buttons-group {
+  margin: 50px auto;
+  display: flex;
+  justify-content: center;
+}
+
+.button {
+  height: 40px;
+  width: 200px;
+  border-style: none;
+  border-radius: 5px;
+  margin-right: 20px;
+  color: white;
+  border-radius: 10px;
+  background: #00a870;
+  box-shadow: -4px -4px 8px #008f5f, 4px 4px 8px #00c181;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+
+  &:hover {
+    box-shadow: -8px -8px 16px #008f5f, 8px 8px 16px #00c181;
+    transform: scale(1.2, 1.2);
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+.small-btn {
+  cursor: pointer;
+  padding: 5px;
+  color: white;
+  font-weight: bold;
+  height: 35px;
+  width: 100px;
+  margin-left: 10px;
+  margin-top: 10px;
+  border-style: none;
+  border-radius: 5px;
+  background: #00a870;
+  box-shadow: -4px -4px 8px #008f5f, 4px 4px 8px #00c181;
+  transition: 0.3s;
+
+  &:hover {
+    box-shadow: -8px -8px 16px #008f5f, 8px 8px 16px #00c181;
+    transform: scale(1.2, 1.2);
+  }
+
+  &:focus {
+    outline: none;
+  }
 }
