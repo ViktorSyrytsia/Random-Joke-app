@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import gotJoke from '../../service/gotJoke';
 import Joke from '../Joke/Joke';
 
@@ -74,6 +74,16 @@ export default function App() {
 
                         })
         }
+        setTimeout(
+                useEffect(
+                        () => {
+                                onGotJoke();
+                        },
+                        []
+                ), 2000
+        )
+
+
 
         const onGotCategoryJoke = (category) => {
                 someJoke.getCatagoryRandomJoke(category)
