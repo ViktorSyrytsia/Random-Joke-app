@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import gotJoke from '../../service/gotJoke';
 import Joke from '../Joke/Joke';
+import Fav from '../favourite-lisst/Fav'
 
 import './App.scss';
 
@@ -18,6 +19,8 @@ export default function App() {
         const [jokeArray, setJokeArray] = useState([]);
 
         const [jokeType, setJokeType] = useState('searchJoke');
+
+        const [favChanged, setfavChanged] = useState(false);
 
         const getJoke = (jokeType) => {
                 if (jokeType === 'randomJoke') {
@@ -102,6 +105,12 @@ export default function App() {
                 console.log(searchValue);
         }
 
+        const onChangeFavArr = () => {
+                setfavChanged(!favChanged);
+                console.log(favChanged);
+
+        }
+
 
         const blockCategory = (<div>
                 {categorys && categorys.map((category, index) =>
@@ -115,13 +124,14 @@ export default function App() {
                 </div>
         )
 
-        const searchArray = jokeArray.map((joke, index) => <Joke key={index} joke={joke} />)
+        const searchArray = jokeArray.map((joke, index) => <Joke onChangeFavArr={onChangeFavArr} key={index} joke={joke} />)
 
 
 
         return (
 
                 <div className="app">
+                        <Fav onChange={favChanged} />
                         <h1>Hey!</h1>
                         <h2>Let’s try to find a joke for you:</h2>
                         <div className="buttons-group">
@@ -134,7 +144,7 @@ export default function App() {
                         {jokeType === 'categoryJoke' ? blockCategory : null}
                         {jokeType === 'searchJoke' ? blockSearch : null}
                         {jokeType === 'searchJoke' ? searchArray : null}
-                        <Joke joke={joke} />
+                        <Joke onChangeFavArr={onChangeFavArr} joke={joke} />
                 </div>
 
         );

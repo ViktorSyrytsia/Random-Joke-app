@@ -1,4 +1,5 @@
 .joke-card {
+  position: relative;
   margin: 0 auto;
   padding: 25px;
   display: flex;
@@ -13,5 +14,32 @@
 }
 
 .joke {
-  font-size: 20px;
+  font-size: 16px;
+}
+.favBtn {
+  position: absolute;
+  right: 14px;
+  top: 14px;
+  border-radius: 10px;
+  background: linear-gradient(225deg, #ffffff, #e6e6e6);
+  box-shadow: -5px 5px 10px #cfcfcf, 5px -5px 10px #ffffff;
+  border-style: none;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  transition: 0.2s;
+  outline: inherit;
+
+  &:hover {
+    transform: scale(1.1, 1.1);
+    box-shadow: -6px 6px 12px #cfcfcf, 6px -6px 12px #ffffff;
+    color: crimson;
+  }
+
+  &:active {
+    outline: none;
+  }
+  &:focus {
+    outline: none;
+  }
 }

@@ -1,0 +1,47 @@
+.favourite-list {
+  padding-top: 20px;
+  padding-right: 20px;
+  position: absolute;
+  width: 400px;
+  height: 600px;
+  overflow-y: scroll;
+  right: -440px;
+  border-top-right-radius: 37px;
+  border-bottom-right-radius: 37px;
+  background: #00a870;
+  transition: 0.4s;
+}
+.fav-list-item {
+  list-style: none;
+  border-radius: 8px;
+  background: #00a870;
+  box-shadow: 13px 13px 25px #009664, -13px -13px 25px #00ba7c;
+  margin-bottom: 20px;
+  padding: 20px;
+}
+
+.del-fav-btn {
+  margin-left: 30px;
+  border-radius: 10px;
+  background: #00a870;
+  box-shadow: 13px 13px 25px #009664, -13px -13px 25px #00ba7c;
+  border-style: none;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  transition: 0.2s;
+  outline: inherit;
+
+  &:hover {
+    transform: scale(1.1, 1.1);
+    box-shadow: 13px 13px 25px #009664, -13px -13px 25px #00ba7c;
+    color: white;
+  }
+
+  &:active {
+    outline: none;
+  }
+  &:focus {
+    outline: none;
+  }
+}
