@@ -34,8 +34,6 @@ const Fav = ({ onChange }) => {
 
         }
 
-
-
         return (
                 <ul className="favourite-list">
                         <h2>Favorite list</h2>
