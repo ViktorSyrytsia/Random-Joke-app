@@ -1,13 +1,10 @@
 .favourite-list {
-  padding-top: 20px;
-  padding-right: 20px;
+  top: -20px;
+  padding: 40px;
   position: absolute;
   width: 400px;
-  height: 600px;
-  overflow-y: scroll;
-  right: -440px;
-  border-top-right-radius: 37px;
-  border-bottom-right-radius: 37px;
+  right: -500px;
+  border-radius: 37px;
   background: #00a870;
   transition: 0.4s;
 }

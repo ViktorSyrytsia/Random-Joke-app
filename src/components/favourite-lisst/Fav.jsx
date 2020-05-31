@@ -38,6 +38,7 @@ const Fav = ({ onChange }) => {
 
         return (
                 <ul className="favourite-list">
+                        <h2>Favorite list</h2>
                         {favArr.map((item) => (<li
                                 className="fav-list-item"
                                 key={item.key}>
